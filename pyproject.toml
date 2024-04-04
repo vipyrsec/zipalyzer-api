@@ -1,0 +1,60 @@
+[project]
+name = "zipalyzer"
+description = "An API for analyzing zip files"
+authors = [
+     { name = "Vipyr Security Developers", email = "support@vipyrsec.com" },
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dynamic = ["version", "dependencies", "optional-dependencies"]
+
+[project.urls]
+repository = "https://github.com/vipyrsec/zipalyzer-api/"
+documentation = "https://docs.vipyrsec.com/zipalyzer-api/"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic.version]
+attr = "zipalyzer.__version__"
+
+[tool.setuptools.dynamic.dependencies]
+file = ["requirements/requirements.txt"]
+
+[tool.setuptools.dynamic.optional-dependencies]
+dev = { file = ["requirements/requirements-dev.txt"] }
+tests = { file = ["requirements/requirements-tests.txt"] }
+docs = { file = ["requirements/requirements-docs.txt"] }
+
+[tool.ruff]
+preview = true
+unsafe-fixes = true
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "ALL",
+]
+ignore = [
+    "CPY001", # (Missing copyright notice at top of file) - No license
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"docs/*" = [
+    "INP001", # (File `tests/*.py` is part of an implicit namespace package. Add an `__init__.py`.) - Docs are not modules
+]
+"tests/*" = [
+    "INP001", # (File `tests/*.py` is part of an implicit namespace package. Add an `__init__.py`.) - Tests are not modules
+    "S101", # (Use of `assert` detected) - Yes, that's the point
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.coverage.run]
+source = [
+    "zipalyzer",
+]

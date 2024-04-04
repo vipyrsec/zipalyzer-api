@@ -1,0 +1,11 @@
+# Requirements
+# --index-url=http://pypi.example.com/simple
+# --no-cache-dir
+
+# Core
+uvicorn[standard]
+fastapi
+pydantic-settings
+
+# Metrics
+sentry-sdk[fastapi]
