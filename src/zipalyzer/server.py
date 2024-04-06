@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from zipalyzer.metadata.routes import router as router_metadata
+from zipalyzer.zips.routes import router as router_zips
 
 from . import __version__
 from .constants import GIT_SHA, Sentry
@@ -32,3 +33,4 @@ app.add_middleware(
 )
 
 app.include_router(router_metadata)
+app.include_router(router_zips)
