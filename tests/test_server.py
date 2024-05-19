@@ -3,7 +3,6 @@
 from http import HTTPStatus
 
 from fastapi.testclient import TestClient
-
 from zipalyzer import __version__
 from zipalyzer.server import app
 

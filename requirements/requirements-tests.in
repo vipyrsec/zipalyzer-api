@@ -3,5 +3,3 @@
 
 pytest
 pytest-randomly
-
-httpx # for fastapi.testclient.TestClient

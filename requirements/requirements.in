@@ -6,6 +6,7 @@
 uvicorn[standard]
 fastapi
 pydantic-settings
+httpx
 
 # Metrics
 sentry-sdk[fastapi]
