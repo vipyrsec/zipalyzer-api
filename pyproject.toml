@@ -40,6 +40,7 @@ select = [
 ]
 ignore = [
     "CPY001", # (Missing copyright notice at top of file) - No license
+    "RUF029", # (Function `` is declared `async`, but doesn't `await` or use `async` features.) - all routes are async
 ]
 
 [tool.ruff.lint.extend-per-file-ignores]
