@@ -18,9 +18,13 @@ h11==0.14.0
     #   -c requirements/requirements.txt
     #   httpcore
 httpcore==1.0.5
-    # via httpx
+    # via
+    #   -c requirements/requirements.txt
+    #   httpx
 httpx==0.27.0
-    # via -r requirements/requirements-tests.in
+    # via
+    #   -c requirements/requirements.txt
+    #   -r requirements/requirements-tests.in
 idna==3.6
     # via
     #   -c requirements/requirements.txt
@@ -32,7 +36,7 @@ packaging==24.0
     # via pytest
 pluggy==1.5.0
     # via pytest
-pytest==8.2.0
+pytest==8.2.2
     # via
     #   -r requirements/requirements-tests.in
     #   pytest-randomly
